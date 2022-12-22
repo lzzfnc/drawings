@@ -4,6 +4,7 @@ export default defineNuxtPlugin(() => {
 	const message = ref({});
 
 	const location = useBrowserLocation();
+	console.log(location.value.origin.replace("http", "ws"));
 	const { status, data, send, open, close } = useWebSocket(
 		location.value.origin.replace("http", "ws")
 	);

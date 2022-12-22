@@ -44,6 +44,8 @@ export default defineNuxtModule({
 	setup(options, nuxt) {
 		nuxt.hook("listen", (server) => {
 			const wss = new WebSocketServer({ server, clientTracking: true });
+			console.log("Server init");
+
 			nuxt.hook("close", () => wss.close());
 
 			VVVV = null;
