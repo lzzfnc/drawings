@@ -23,6 +23,10 @@
         @mousemove="draw"
         @mouseup="stopDrawing"
         @mouseleave="stopDrawing"
+        @touchstart.prevent="startDrawing"
+        @touchmove.prevent="draw"
+        @touchend="stopDrawing"
+        @touchcancel="stopDrawing"
     >
     </svg>
     <button @click="send">Send</button>
